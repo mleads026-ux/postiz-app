@@ -8,6 +8,10 @@ const ALLOWED_ORIGINS = new Set([
   'https://viral-title-studio-git-main-mleads1.vercel.app',
 ]);
 const PLATFORMS = ['youtube', 'instagram', 'tiktok', 'facebook'];
+// Conservative app-only limit, NOT a guarantee about account-wide Workers AI usage.
+const DAILY_GENERATION_LIMIT = 8;
+const PROMPT_CHAR_LIMIT = 6000;
+const MAX_RESPONSE_TOKENS = 2800;
 
 const SYSTEM_PROMPT = [
   'أنت كاتب محتوى محترف متخصص في التسويق الإبداعي للفيديوهات القصيرة.',
@@ -103,6 +107,51 @@ function normalize(value) {
   }
   return result;
 }
+
+/**
+ * One strongly consistent daily counter for this studio, regardless of visitor/device.
+ * Reserve before generation and do not refund on AI/provider failure: fail closed.
+ * Day boundaries are midnight UTC, matching Cloudflare's daily free allocation.
+ */
+export class DailyQuota {
+  constructor(state) { this.state = state; }
+  async fetch(request) {
+    const url = new URL(request.url);
+    const day = new Date().toISOString().slice(0, 10);
+    const resetAt = new Date(Date.parse(day + 'T00:00:00.000Z') + 86400000).toISOString();
+    const info = (used, allowed = false) => Response.json({
+      allowed, used, limit: DAILY_GENERATION_LIMIT,
+      remaining: Math.max(0, DAILY_GENERATION_LIMIT - used), resetAt,
+    });
+
+    if (request.method === 'GET' && url.pathname === '/status') {
+      const record = await this.state.storage.get('daily');
+      const used = record?.day === day ? record.used : 0;
+      return info(used);
+    }
+    if (request.method !== 'POST' || url.pathname !== '/reserve') {
+      return new Response('Not found', { status: 404 });
+    }
+    const outcome = await this.state.storage.transaction(async (transaction) => {
+      const record = await transaction.get('daily');
+      const used = record?.day === day ? record.used : 0;
+      if (used >= DAILY_GENERATION_LIMIT) return { allowed: false, used };
+      await transaction.put('daily', { day, used: used + 1 });
+      return { allowed: true, used: used + 1 };
+    });
+    return info(outcome.used, outcome.allowed);
+  }
+}
+
+async function quotaCall(env, method) {
+  // Quota unavailable? Fail closed; never let an AI call bypass the daily ceiling.
+  const id = env.DAILY_QUOTA.idFromName('viral-studio-global-daily');
+  const stub = env.DAILY_QUOTA.get(id);
+  const response = await stub.fetch('https://quota.internal/' + (method === 'POST' ? 'reserve' : 'status'), { method });
+  if (!response.ok) throw new Error('Daily quota storage unavailable');
+  return response.json();
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -114,13 +163,16 @@ export default {
       return json({ error: 'Not an allowed website.' }, 403, origin);
     }
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors(origin) });
-    if (request.method !== 'POST' || url.pathname !== '/generate') {
+    const isQuota = request.method === 'GET' && url.pathname === '/quota';
+    const isGenerate = request.method === 'POST' && url.pathname === '/generate';
+    if (!isGenerate && !isQuota) {
       return json({ error: 'Not found.' }, 404, origin);
     }
     if (!env.ACCESS_PIN || request.headers.get('x-studio-pin') !== env.ACCESS_PIN) {
       return json({ error: 'Access code incorrect. Check your private studio code.' }, 401, origin);
     }
     try {
+      if (isQuota) return json({ ok: true, quota: await quotaCall(env, 'GET') }, 200, origin);
       const ip = request.headers.get('cf-connecting-ip') || 'unknown';
       const local = await env.RATE_PER_IP.limit({ key: ip });
       const global = await env.RATE_GLOBAL.limit({ key: 'all' });
@@ -130,20 +182,27 @@ export default {
       const size = Number(request.headers.get('content-length') || 0);
       if (size > 15000) return json({ error: 'البرومبت أطول من الحد المسموح.' }, 413, origin);
       const payload = await request.json();
-      const prompt = text(payload?.prompt, 8000);
+      const prompt = text(payload?.prompt, PROMPT_CHAR_LIMIT);
       if (prompt.length < 20) return json({ error: 'اكتب على الأقل 20 حرف من برومبت القصة.' }, 400, origin);
+      if (typeof payload?.prompt === 'string' && payload.prompt.trim().length > PROMPT_CHAR_LIMIT) {
+        return json({ error: 'البرومبت طويل؛ الحد الأقصى 6000 حرف للحفاظ على الحصة المجانية.' }, 400, origin);
+      }
       const language = payload?.language === 'en' ? 'English' : 'العربية العامية المصرية';
       const hideSpoiler = payload?.hideSpoiler !== false;
+      const quota = await quotaCall(env, 'POST');
+      if (!quota.allowed) {
+        return json({ error: 'خلصت حصة الاستوديو النهارده. هتتجدد الساعة 00:00 UTC.', quota }, 429, origin);
+      }
       const response = await env.AI.run(MODEL, {
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           { role: 'user', content: JSON.stringify({ storyPrompt: prompt, preferredLanguage: language, hideSpoiler }) },
         ],
         temperature: 0.76,
-        max_tokens: 3100,
+        max_tokens: MAX_RESPONSE_TOKENS,
         response_format: { type: 'json_object' },
       });
-      return json({ ok: true, platforms: normalize(response) }, 200, origin);
+      return json({ ok: true, platforms: normalize(response), quota }, 200, origin);
     } catch (err) {
       // Do not log the user's story, model response or access code.
       console.error('Viral Studio AI generation failed:', err?.message || 'unknown');
