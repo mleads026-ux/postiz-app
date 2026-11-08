@@ -1,6 +1,6 @@
 {
 	"name": "Postiz Dev Container",
-	"image": "localhost/postiz-devcontainer",
+	"image": "ghcr.io/gitroomhq/postiz-devcontainer:latest",
 	"features": {},
 	"customizations": {
 		"vscode": {
