@@ -180,7 +180,7 @@ export default {
         return json({ error: 'فيه طلبات كتير دلوقتي. حاول تاني بعد دقيقة.' }, 429, origin);
       }
       const size = Number(request.headers.get('content-length') || 0);
-      if (size > 15000) return json({ error: 'البرومبت أطول من الحد المسموح.' }, 413, origin);
+      if (size > 30000) return json({ error: 'البرومبت أطول من الحد المسموح.' }, 413, origin);
       const payload = await request.json();
       const prompt = text(payload?.prompt, PROMPT_CHAR_LIMIT);
       if (prompt.length < 20) return json({ error: 'اكتب على الأقل 20 حرف من برومبت القصة.' }, 400, origin);
