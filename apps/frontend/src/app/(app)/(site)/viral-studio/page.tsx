@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ViralStudio } from '@gitroom/frontend/components/viral-studio/viral-studio';
+import { ViralTitleStudio } from '@gitroom/frontend/components/viral-studio/viral-title-studio';
 
 export const metadata: Metadata = {
   title: 'Viral Title Studio | Postiz',
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ViralStudioPage() {
-  return <ViralStudio />;
+  return <ViralTitleStudio />;
 }
