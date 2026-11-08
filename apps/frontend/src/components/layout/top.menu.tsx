@@ -61,6 +61,16 @@ export const useMenuItem = () => {
       path: '/agents',
     },
     {
+      name: 'Viral Studio',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3 9.5 9.5 3 12l6.5 2.5L12 21l2.5-6.5L21 12l-6.5-2.5L12 3Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+          <path d="M19 2v4M17 4h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      ),
+      path: '/viral-studio',
+    },
+    {
       name: t('analytics', 'Analytics'),
       icon: (
         <svg
