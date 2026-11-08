@@ -3,195 +3,182 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0e1020">
-  <meta name="description" content="Viral Title Studio — استوديو لصناعة عناوين وHooks وكابشنات عربية لمحتوى السوشيال.">
-  <title>Viral Title Studio | Postiz</title>
+  <meta name="theme-color" content="#0b0d18">
+  <meta name="description" content="الذكاء الاصطناعي يحوّل برومبت القصة إلى عناوين وHooks وكابشنات وهاشتاجات لـ4 منصات.">
+  <title>Viral Title Studio AI — برومبت واحد، أربع منصات</title>
   <style>
-    :root{color-scheme:dark;--bg:#0d1020;--panel:#181c30;--panel2:#20253b;--line:#343b59;--muted:#abb3cf;--txt:#f5f6ff;--purple:#8967ff;--pink:#ed65b5;--ok:#76d4b1}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -15%,#3b265a 0,transparent 44%),radial-gradient(ellipse at 0% 10%,#1b264b 0,transparent 38%),var(--bg);color:var(--txt);font-family:Tahoma,Arial,sans-serif;line-height:1.7;min-height:100vh}
-    button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #b9a6ff;outline-offset:2px}a{color:#c7b5ff}
-    .wrap{max-width:1150px;margin:0 auto;padding:24px 16px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:800}.mark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--pink));font-size:21px}.small{color:var(--muted);font-size:12px}
-    .hero{border-radius:25px;padding:32px;background:linear-gradient(125deg,rgba(137,103,255,.25),rgba(237,101,181,.09) 55%,rgba(23,26,48,.6));border:1px solid #6854a180;margin-bottom:21px}.hero .kicker{font-size:12px;font-weight:700;letter-spacing:.2px;color:#dfccff}.hero h1{font-size:clamp(28px,5vw,42px);margin:5px 0 8px;line-height:1.3}.hero p{margin:0;color:#ced1e7;max-width:720px;font-size:14px}
-    .grid{display:grid;grid-template-columns:350px minmax(0,1fr);gap:18px}.panel{border:1px solid var(--line);border-radius:20px;padding:22px;background:rgba(24,28,48,.94);min-width:0;box-shadow:0 12px 30px #05061520}.panel h2{font-size:18px;margin:0 0 5px}.panel .hint{font-size:12px;color:var(--muted);margin:0 0 16px}.stack{display:grid;gap:14px}.field{display:grid;gap:7px;font-size:13px;font-weight:700}.field input,.field textarea{border:1px solid #424962;border-radius:12px;min-height:48px;background:#101429;color:#fff;padding:12px 13px;width:100%;resize:vertical;font-weight:400}.field textarea{min-height:82px}.field input::placeholder,.field textarea::placeholder{color:#828cab}.switch{display:flex;align-items:center;gap:10px;background:#101429;padding:12px;border-radius:12px;font-size:13px}.switch input{accent-color:var(--purple);width:17px;height:17px}.section{display:grid;gap:16px}.platforms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.pill{border:1px solid #3f4868;color:var(--muted);background:#12172b;padding:10px 7px;border-radius:12px;font-weight:700;font-size:12px;transition:background .2s}.pill[aria-pressed=true]{background:#5135a6;color:white;border-color:#a38aff}.styles{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.style-pill{border-radius:24px;border:1px solid #414965;color:var(--muted);background:#13192b;padding:7px 13px;font-size:12px}.style-pill[aria-pressed=true]{background:var(--purple);color:white;border-color:var(--purple)}.result-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}.result-head h2{margin:0}.label{font-size:11px;color:var(--muted);border:1px solid var(--line);padding:5px 9px;border-radius:20px}.options{display:grid;gap:10px}.option{display:block;width:100%;text-align:right;background:#101429;border:1px solid #414965;border-radius:15px;padding:15px;color:var(--txt);transition:background .2s}.option:hover{background:#232842}.option[aria-pressed=true]{background:#2a2149;border-color:#a18bff}.option-meta{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);gap:10px}.score{font-weight:800;color:#d9cbff;background:#4c347e;border-radius:18px;padding:3px 10px}.option-title{display:block;font-size:15px;font-weight:800;margin:7px 0;overflow-wrap:anywhere}.hook{font-size:12px;color:#aebad9;display:block}.results{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.cardtitle{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:15px}.cardtitle h2{margin:0}.action{background:#7352db;border:none;border-radius:11px;padding:9px 14px;color:#fff;font-weight:700;font-size:12px}.action.secondary{background:#293253;border:1px solid #596380}.copycontent{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:2}.inner{padding:14px;border:1px solid #3c4564;border-radius:12px;background:#101429;margin-top:14px}.inner small{display:block;color:var(--muted);margin-bottom:5px}.tip{margin-top:18px;background:#151b2d;border:1px solid #344059;border-radius:15px;padding:16px 20px;font-size:12px;color:var(--muted)}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#d8cbff;color:#21183b;font-weight:800;padding:10px 20px;border-radius:99px;box-shadow:0 12px 40px #0008;z-index:10}.hide{display:none!important}.subtle{margin:10px 0 0;color:var(--muted);font-size:12px}
-    @media(max-width:850px){.grid{grid-template-columns:1fr}.results{grid-template-columns:1fr}}@media(max-width:520px){.wrap{padding:15px 12px 50px}.hero{padding:24px 19px}.panel{padding:16px}.platforms{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start}.top .small{max-width:130px;text-align:left}.hero h1{font-size:29px}}
+    :root{color-scheme:dark;--bg:#0b0d18;--panel:#171a2a;--panel-alt:#101421;--line:#34394e;--muted:#a8afc9;--text:#f8f8fc;--purple:#885cff;--pink:#e36ac3;--green:#72d9bd}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{min-height:100vh;margin:0;background:radial-gradient(circle at 85% -15%,#332155 0%,transparent 36%),radial-gradient(circle at 0% 40%,#1a2137 0%,transparent 32%),var(--bg);color:var(--text);font:14px/1.8 Tahoma,Arial,sans-serif}
+    button,textarea,input,select{font:inherit}button{cursor:pointer}button:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #d7c7ff;outline-offset:2px}a{color:#c9b9ff}p{margin-top:0}h1,h2,h3{line-height:1.4}h1{font-size:clamp(27px,4vw,46px);margin:7px 0 13px}h2{font-size:20px;margin:0}h3{font-size:15px;margin:0 0 12px}
+    .container{max-width:1140px;margin:auto;padding:20px 17px 58px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:0 0 17px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:16px}.logo{display:grid;place-items:center;width:42px;height:42px;background:linear-gradient(125deg,var(--purple),var(--pink));border-radius:13px;font-size:22px}.mini{font-size:11px;color:var(--muted);font-weight:400}.nav{font-size:12px;color:#cfc8fa;text-decoration:none;padding:8px 12px;border-radius:11px;background:#201b38;border:1px solid #40345a}
+    .hero{padding:35px 35px 29px;border:1px solid #51427c;background:linear-gradient(120deg,#31205798,#191d32 65%,#17203b);border-radius:26px;margin-bottom:19px}.eyebrow{font-size:11px;letter-spacing:1.3px;color:#d7c8ff;font-weight:800}.hero p{color:#c7cbe0;max-width:770px;font-size:14px}.tags-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{border:1px solid #5a4e84;background:#30224b;padding:5px 10px;border-radius:50px;color:#ddd4ff;font-size:11px}
+    .grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:19px;align-items:start}.panel{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:23px}.help{font-size:12px;color:var(--muted);margin:9px 0 14px}.prompt{width:100%;min-height:285px;resize:vertical;background:#0f1321;color:#fff;border:1px solid #474461;border-radius:15px;padding:17px;font-size:14px;line-height:2;outline:none}.prompt::placeholder{color:#7d88a3}.tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 16px}.ghost{background:#24263a;border:1px solid #414665;color:#d8dbed;border-radius:11px;padding:8px 12px;font-size:12px}.counter{color:#858da9;font-size:11px}.formcols{display:flex;flex-wrap:wrap;gap:12px;align-items:end}.selectbox{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700}.selectbox select,.selectbox input{height:46px;border-radius:11px;border:1px solid #484a68;background:#12172b;color:#fff;padding:0 12px;min-width:135px}.check{display:flex;align-items:center;gap:8px;font-size:12px;color:#e6e1fa;padding:12px 0}.check input{width:17px;height:17px;accent-color:var(--purple)}.primary{border:0;border-radius:13px;background:linear-gradient(105deg,#8056e8,#b366d7);color:white;font-weight:800;padding:14px 21px;font-size:14px;min-height:49px;box-shadow:0 9px 28px #8356d126}.primary:disabled{opacity:.55;cursor:not-allowed}.buttonrow{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;margin-top:17px}.privacy{font-size:11px;max-width:260px;color:var(--muted);line-height:1.8}.side .point{display:flex;gap:11px;margin:17px 0;align-items:start}.circle{background:#29214a;border:1px solid #6a5997;color:#e0cfff;display:grid;place-items:center;width:32px;height:32px;flex:none;border-radius:11px;font-weight:900}.point b{display:block}.point span{display:block;color:var(--muted);font-size:11px}.divider{height:1px;background:var(--line);margin:22px 0}.code{background:#0f1321;border:1px solid #4b4666;color:white;border-radius:10px;padding:11px 12px;min-width:0;width:100%;font-size:14px;letter-spacing:2px;text-align:left;direction:ltr}.code-row{display:flex;align-items:center;gap:8px}.code-eye{border:1px solid #474766;background:#23263c;color:#d8dcf7;border-radius:10px;padding:9px 10px}.status{border-radius:13px;border:1px solid #545a70;background:#22263b;margin-top:15px;padding:12px 14px;font-size:13px;line-height:1.7}.status.error{background:#341e2a;border-color:#914e64;color:#ffd6df}.status.ok{background:#17352e;border-color:#2b7e68;color:#d1fce5}.hidden{display:none!important}
+    #resultArea{margin-top:24px;scroll-margin-top:15px}.resulttop{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:16px}.resulttop p{margin:5px 0;color:var(--muted);font-size:12px}.tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:15px}.tab{padding:14px 9px;border:1px solid #474d67;background:#191d30;border-radius:13px;color:#c5c9d9;font-weight:800;transition:.15s}.tab[aria-selected=true]{background:#413073;border-color:#ab88ff;color:white}.sections{display:grid;grid-template-columns:1fr 1fr;gap:16px}.block{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:21px;min-width:0}.head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:15px}.head h3{margin:0}.copy{background:#392e5d;border:1px solid #71549c;color:#efddff;border-radius:10px;padding:8px 12px;font-size:12px;font-weight:700}.content{white-space:pre-wrap;overflow-wrap:anywhere;line-height:2;color:#e6e7f8;font-size:14px}.titles{display:grid;gap:10px}.title-item{display:flex;align-items:start;justify-content:space-between;gap:10px;background:#111526;padding:12px;border-radius:12px;border:1px solid #41465d}.title-item div{font-weight:700;flex:1;overflow-wrap:anywhere}.title-item button{flex:none}.muted{font-size:11px;color:var(--muted)}.output{padding:13px;background:#121627;border:1px solid #363e58;border-radius:13px}.tags{display:flex;flex-wrap:wrap;gap:7px}.tags .tag{background:#292346;border-color:#4b426c;font-size:11px}.miniBlock{margin-top:17px;padding-top:15px;border-top:1px solid var(--line)}.note{font-size:12px;color:var(--muted);margin:16px 0 0;line-height:1.8}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);padding:10px 17px;border-radius:100px;background:#ede5ff;color:#2b2251;font-weight:800;box-shadow:0 10px 50px #0008;z-index:15}
+    @media(max-width:840px){.grid{grid-template-columns:1fr}.sections{grid-template-columns:1fr}.side{order:2}.hero{padding:27px}.prompt{min-height:265px}}@media(max-width:500px){.container{padding:12px 11px 55px}.hero{padding:23px 19px;border-radius:20px}.panel,.block{padding:17px}.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.buttonrow .primary{width:100%}.topbar{margin:7px 0 17px}.nav{font-size:11px}.prompt{min-height:280px}.brand{font-size:14px}.head h3{font-size:14px}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="top"><div class="brand"><div class="mark">✦</div><div>Viral Title Studio<div class="small">by Postiz · Mobile Edition</div></div></div><div class="small">تشتغل من الموبايل بدون API</div></div>
-    <section class="hero"><div class="kicker">CREATOR TOOLKIT ✨</div><h1>حوّل فكرة الفيديو لعنوان يخطف الانتباه</h1><p>عناوين، Hooks لأول 3 ثواني، كابشنات وهاشتاجات منفصلة لكل منصة. اختار أحسن صيغة وانسخها بضغطة واحدة.</p></section>
-    <div class="grid">
-      <section class="panel">
-        <h2>① تفاصيل الفيديو</h2><p class="hint">تقدر تغيّر المثال لأي موضوع تحبه.</p>
-        <div class="stack">
-          <label class="field">فكرة الفيديو *<textarea id="topic" maxlength="400" aria-required="true" placeholder="احكي موضوع الفيديو في جملة…">ملك حاصر قلعة وسمح للنساء ياخدوا أغلى حاجة عندهم</textarea></label>
-          <label class="field">المفاجأة أو نهاية القصة<textarea id="twist" maxlength="350" placeholder="إيه اللي حصل في النهاية؟">كل واحدة شالت جوزها على ضهرها</textarea></label>
-          <label class="field">الزمان أو المكان (اختياري)<input id="context" maxlength="120" value="ألمانيا سنة 1140م" placeholder="المكان والتاريخ"></label>
-          <label class="field">كلمات مفتاحية (افصل بفاصلة)<input id="keywords" maxlength="260" value="غرائب التاريخ، قصص تاريخية، فاينسبرغ" placeholder="تاريخ، غرائب، معلومات"></label>
-          <label class="switch"><input type="checkbox" id="hideTwist" checked><span>ما تحرقش المفاجأة في العنوان</span></label>
-        </div>
-      </section>
-      <div class="section">
-        <section class="panel">
-          <h2>② اختار المنصة والأسلوب</h2>
-          <div id="platforms" class="platforms" role="group" aria-label="المنصة">
-            <button class="pill" data-platform="youtube" aria-pressed="true">▶ YouTube</button>
-            <button class="pill" data-platform="tiktok" aria-pressed="false">♪ TikTok</button>
-            <button class="pill" data-platform="instagram" aria-pressed="false">◎ Instagram</button>
-            <button class="pill" data-platform="facebook" aria-pressed="false">f Facebook</button>
-          </div>
-          <div id="styles" class="styles" role="group" aria-label="أسلوب العنوان">
-            <button class="style-pill" data-style="curiosity" aria-pressed="true">فضول وغموض</button>
-            <button class="style-pill" data-style="surprise" aria-pressed="false">صدمة ومفاجأة</button>
-            <button class="style-pill" data-style="question" aria-pressed="false">سؤال وتفاعل</button>
-          </div>
-          <p id="platformDesc" class="subtle">عنوان قابل للبحث مع Hook واضح.</p>
-        </section>
-        <section class="panel">
-          <div class="result-head"><h2>③ اختار العنوان والـHook</h2><span class="label">التقييم تحريري مش توقع مشاهدات</span></div>
-          <div id="options" class="options" aria-live="polite"></div>
-        </section>
+<div class="container">
+  <nav class="topbar"><div class="brand"><span class="logo">✦</span><div>Viral Title Studio<div class="mini">AI Powered · by Postiz</div></div></div><a class="nav" href="./manual.html">النسخة اليدوية ←</a></nav>
+  <header class="hero">
+    <span class="eyebrow">ONE PROMPT → FOUR PLATFORMS</span>
+    <h1>برومبت واحد... وكل حاجة جاهزة للنشر ✨</h1>
+    <p>الصق برومبت القصة أو السيناريو اللي بتشتغل بيه، والذكاء الاصطناعي هيطلع عناوين وHooks وكابشنات وهاشتاجات مخصوصة لكل منصة، دفعة واحدة.</p>
+    <div class="tags-row"><span class="tag">▶ YouTube Shorts</span><span class="tag">♪ TikTok</span><span class="tag">◎ Instagram Reels</span><span class="tag">f Facebook Reels</span></div>
+  </header>
+  <div class="grid">
+    <section class="panel" aria-label="برومبت القصة">
+      <h2>① برومبت القصة كامل</h2>
+      <p class="help">ممكن تلصق مشاهد الفيديو، الـNarration، برومبت الصور أو ملخص القصة بالكامل. مش محتاج تقسّم أي حاجة.</p>
+      <textarea class="prompt" id="story" maxlength="8000" placeholder="الصق هنا البرومبت اللي بنكتبه للقصة ...&#10;&#10;مثال: فيديو مدته دقيقة عن قصة تاريخية غريبة، يبدأ بمشهد الحصار، وفي النهاية تظهر مفاجأة غير متوقعة. عايز الHook قوي وممنوع حرق نهاية القصة في العنوان."></textarea>
+      <div class="tools"><button type="button" class="ghost" id="trySample">جرّب مثال لقصة</button><span id="counter" class="counter">0 / 8000 حرف</span></div>
+      <div class="formcols">
+        <label class="selectbox">لغة النشر<select id="language"><option value="ar">مصري عامي 🇪🇬</option><option value="en">English 🇺🇸</option></select></label>
+        <label class="check"><input id="hideSpoiler" type="checkbox" checked> ما تحرقش مفاجأة القصة</label>
       </div>
+      <div class="buttonrow"><button type="button" id="generate" class="primary">✨ ولّد المحتوى للأربع منصات</button><span class="privacy">البرومبت بيُرسل لخدمة Cloudflare AI عند الضغط على الزر فقط. مش بننشره على السوشيال تلقائيًا.</span></div>
+      <div id="status" class="status hidden" role="status" aria-live="polite"></div>
+    </section>
+    <aside class="panel side">
+      <h2>النتيجة هتكون جاهزة لـ...</h2>
+      <div class="point"><span class="circle">1</span><div><b>3 عناوين لكل منصة</b><span>عناوين مختلفة في الأسلوب لجذب الانتباه من غير تضليل.</span></div></div>
+      <div class="point"><span class="circle">2</span><div><b>Hook لأول 3 ثواني</b><span>بداية قوية ومناسبة للقصة.</span></div></div>
+      <div class="point"><span class="circle">3</span><div><b>كابشن + هاشتاجات</b><span>وصف ودعوة للتفاعل حسب كل منصة.</span></div></div>
+      <div class="point"><span class="circle">4</span><div><b>YouTube Tags + Thumbnail</b><span>كلمات مفتاحية وعنوان للصورة المصغرة وتعليق مثبّت.</span></div></div>
+      <div class="divider"></div>
+      <h3>🔐 كود الاستوديو الخاص</h3><p class="help">أول مرة بس. هيُحفظ على جهازك عشان محدش يستهلك حصة الذكاء الاصطناعي بتاعتك.</p>
+      <div class="code-row"><input class="code" type="password" id="pin" aria-label="كود الدخول" maxlength="24" autocomplete="off" placeholder="كود الدخول"><button type="button" class="code-eye" id="showPin" aria-label="إظهار الكود">👁</button></div>
+      <p class="muted">ما تشاركش الكود مع حد. تقدر تغيّره لاحقًا.</p>
+    </aside>
+  </div>
+
+  <section id="resultArea" class="hidden" aria-live="polite">
+    <div class="resulttop"><div><h2>② المحتوى الجاهز للمنصات الأربع</h2><p>بدّل بين المنصات وانسخ أي جزء؛ كل النتائج اتولدت من نفس البرومبت.</p></div><button type="button" class="copy" id="copyAll">نسخ نتائج الأربع منصات</button></div>
+    <div class="tabs" role="tablist" aria-label="المنصات">
+      <button type="button" class="tab" role="tab" data-platform="youtube" aria-selected="true">▶ YouTube</button>
+      <button type="button" class="tab" role="tab" data-platform="instagram" aria-selected="false">◎ Instagram</button>
+      <button type="button" class="tab" role="tab" data-platform="tiktok" aria-selected="false">♪ TikTok</button>
+      <button type="button" class="tab" role="tab" data-platform="facebook" aria-selected="false">f Facebook</button>
     </div>
-    <div id="results" class="results">
-      <section class="panel">
-        <div class="cardtitle"><h2>العنوان المختار</h2><button class="action" id="copyTitle">نسخ العنوان</button></div>
-        <div class="copycontent" id="selectedTitle"></div>
-        <div class="inner"><small>🎬 مقترح لأول 3 ثواني</small><div id="selectedHook"></div></div>
-        <button class="action secondary" id="copyHook" style="margin-top:12px">نسخ الـHook</button>
-      </section>
-      <section class="panel">
-        <div class="cardtitle"><h2>الكابشن والهاشتاجات</h2><button class="action" id="copyCaption">نسخ الكابشن</button></div>
-        <div class="copycontent" id="caption"></div>
-        <div id="youtubeTags" class="inner"><div class="cardtitle"><strong>YouTube Tags</strong><button class="action secondary" id="copyTags">نسخ Tags</button></div><div class="copycontent" id="tagText"></div><small id="tagCount"></small></div>
-      </section>
+    <div class="sections">
+      <article class="block"><div class="head"><h3>📣 العناوين المقترحة</h3><button class="copy" type="button" id="copyTitles">نسخ العناوين</button></div><div class="titles" id="titles"></div><div class="miniBlock"><div class="head"><h3>🎬 Hook أول 3 ثواني</h3><button class="copy" type="button" id="copyHook">نسخ</button></div><div class="output content" id="hook"></div></div><div class="miniBlock"><div class="head"><h3>🖼 عنوان الصورة المصغرة</h3><button class="copy" type="button" id="copyThumbnail">نسخ</button></div><div class="output content" id="thumbnail"></div></div></article>
+      <article class="block"><div class="head"><h3>📝 الكابشن / وصف الفيديو</h3><button class="copy" type="button" id="copyCaption">نسخ الكابشن</button></div><div class="output content" id="caption"></div><div class="miniBlock"><div class="head"><h3>🏷 الهاشتاجات</h3><button class="copy" type="button" id="copyHashtags">نسخ الهاشتاجات</button></div><div class="tags" id="hashtags"></div></div><div class="miniBlock hidden" id="ytTagsWrap"><div class="head"><h3>YouTube Tags</h3><button class="copy" type="button" id="copyYtTags">نسخ Tags</button></div><div class="output content" id="ytTags"></div><span id="ytCount" class="muted"></span></div><div class="miniBlock"><div class="head"><h3>📌 تعليق مثبّت</h3><button class="copy" type="button" id="copyComment">نسخ</button></div><div class="output content" id="comment"></div></div><button type="button" class="primary" id="copyPack" style="width:100%;margin-top:18px">نسخ الباكدج كله للمنصة دي</button></article>
     </div>
-    <aside class="tip"><strong>مهم:</strong> دي أداة كتابة واقتراحات محلية مجانية، مش نموذج ذكاء اصطناعي متصل ولا أداة ترندات حية. نقاط القوة تقديرية، وما فيش ضمان إن العنوان هيحقق عدد مشاهدات معين. ما فيش نشر تلقائي أو إرسال لفكرة الفيديو لخادم خارجي.</aside>
-  </div><div id="toast" class="toast hide" role="status" aria-live="polite"></div>
-  <script>
-    (() => {
-      'use strict';
-      const byId = (id) => document.getElementById(id);
-      const config = {
-        youtube: {desc:'عنوان قابل للبحث مع Hook واضح.',tags:['#Shorts','#HistoryShorts','#غرائب_التاريخ','#قصص_تاريخية'],count:4},
-        tiktok: {desc:'هوك سريع يخطف الانتباه من أول ثانية.',tags:['#fyp','#foryou','#viral','#قصص_غريبة','#غرائب_التاريخ'],count:5},
-        instagram: {desc:'فضول وسؤال يشجّع المتابعين على التعليق.',tags:['#reels','#viral','#explore','#trending','#غرائب_التاريخ'],count:5},
-        facebook: {desc:'كابشن يحكي بداية القصة ويشجع النقاش.',tags:['#reels','#viral','#قصص_تاريخية','#غرائب_التاريخ'],count:5}
-      };
-      const ranking = {
-        curiosity:['غموض','تشويق','سؤال','تحدي','صدمة','قصة'],
-        surprise:['صدمة','كشف المفاجأة','مباشر','تشويق','غموض','قصة'],
-        question:['سؤال','تحدي','غموض','صدمة','قصة','تشويق']
-      };
-      let platform = 'youtube', style = 'curiosity', chosen = 0, entries = [], caption = '', tags = '';
-      function shorten(text,max=65){text=text.trim().replace(/\s+/g,' ');return text.length<=max?text:text.slice(0,max-1).trimEnd()+'…'}
-      function safeHashtag(s){return s.trim().replace(/[\s-]+/g,'_').replace(/[^\p{L}\p{N}_]/gu,'')}
-      function hashTags(keywords){
-        const extra=keywords.split(/[,،\n]+/).map(safeHashtag).filter(Boolean).map(w=>'#'+w);
-        const base=config[platform].tags;
-        return [...new Set([...base.slice(0,3),...extra,...base.slice(3)])].slice(0,config[platform].count);
-      }
-      function youtubeTags(topic,keywords){
-        const list=['shorts','viral shorts','youtube shorts','history shorts','weird history','history facts','did you know','storytelling','قصص تاريخية','غرائب التاريخ','هل تعلم',...keywords.split(/[,،\n]+/).map(s=>s.trim()),shorten(topic,60)];
-        let text='';
-        for(const word of [...new Set(list.map(x=>x.toLowerCase().trim()).filter(Boolean))]){
-          const next=text?text+', '+word:word;
-          if(next.length>500)break;
-          text=next;
-        }
-        return text;
-      }
-      function score(title,hook,topic){
-        let result=48;
-        if(title.length>=28&&title.length<=95)result+=12;
-        if(title.length<20||title.length>110)result-=12;
-        if(/[؟?]/.test(title+hook))result+=8;
-        if(/[!！…]/.test(title))result+=5;
-        if(/تخيل|إزاي|ماذا|إيه|مين|سر|مفاجأة|مكنش|تصدق|اللي حصل/.test(title+hook))result+=12;
-        if(hook.length>=20&&hook.length<=105)result+=8;
-        const first=topic.split(/\s+/)[0]||'';
-        if(first.length>2&&title.includes(first))result+=5;
-        return Math.max(35,Math.min(96,result));
-      }
-      function generate(topic,twist,context,hideTwist){
-        const subject=shorten(topic,58),short=shorten(topic,43),fact=shorten(twist,62),setting=shorten(context,44);
-        const ideas=[
-          {approach:'صدمة',title:'😱 '+subject+'… واللي حصل بعدها صدم الكل!',hook:'تخيل '+subject+'… بس استنى لما تعرف اللي حصل بعدها!'},
-          {approach:'سؤال',title:'إيه اللي حصل بعد '+short+'؟ 👀',hook:'لو كنت مكانهم، تفتكر كنت هتتصرف إزاي؟'},
-          {approach:'غموض',title:'سر أغرب نهاية لحكاية '+short+'!',hook:'في تفصيلة في الحكاية دي محدش كان متوقعها.'},
-          {approach:'تشويق',title:'الكل افتكر إنها النهاية… لكن '+short+'!',hook:'كل حاجة كانت ماشية بشكل طبيعي، لحد ما حصلت المفاجأة.'},
-          {approach:'تحدي',title:'تقدر تتوقع نهاية حكاية '+short+'؟',hook:'هحكيلك موقف غريب، وشوف هتعرف تتوقع نهايته ولا لأ.'},
-          {approach:'قصة',title:(setting?setting+' | ':'')+subject+'… وحصلت المفاجأة!',hook:(setting?'الحكاية بدأت في '+setting+'. ':'')+'اسمع اللي حصل!'}
-        ];
-        if(fact&&!hideTwist)ideas.push(
-          {approach:'كشف المفاجأة',title:'😱 '+fact+'… والسبب أغرب مما تتخيل!',hook:'المفاجأة إن '+fact+'! بس إزاي وصلوا لكده؟'},
-          {approach:'مباشر',title:fact+'! 👀 حكاية محدش يتوقعها',hook:'عارف إن '+fact+'؟ تعال أقولك الحكاية.'}
-        );
-        return ideas.map(idea=>{
-          const max=platform==='youtube'?92:platform==='tiktok'?100:130;
-          const title=shorten(idea.title,max)+(platform==='youtube'?' #Shorts':'');
-          const pos=ranking[style].indexOf(idea.approach),bonus=pos<0?0:Math.max(0,8-pos*2);
-          return {...idea,title,score:Math.min(96,score(title,idea.hook,topic)+bonus)};
-        }).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,'ar'));
-      }
-      function element(name,cls,text){
-        const node=document.createElement(name);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;
-      }
-      function render(){
-        const topic=byId('topic').value.trim(),twist=byId('twist').value.trim(),context=byId('context').value.trim(),keywords=byId('keywords').value;
-        const hideTwist=byId('hideTwist').checked;
-        byId('platformDesc').textContent=config[platform].desc;
-        document.querySelectorAll('[data-platform]').forEach(node=>node.setAttribute('aria-pressed',String(node.dataset.platform===platform)));
-        document.querySelectorAll('[data-style]').forEach(node=>node.setAttribute('aria-pressed',String(node.dataset.style===style)));
-        entries=topic?generate(topic,twist,context,hideTwist):[];
-        if(chosen>=entries.length)chosen=0;
-        const options=byId('options');
-        options.replaceChildren();
-        if(!entries.length){
-          options.append(element('p','small','اكتب فكرة الفيديو عشان تظهر الاقتراحات.'));
-          byId('results').classList.add('hide');return;
-        }
-        byId('results').classList.remove('hide');
-        entries.forEach((item,i)=>{
-          const button=element('button','option');
-          button.type='button';button.setAttribute('aria-pressed',String(i===chosen));
-          const meta=element('div','option-meta');
-          meta.append(element('span','',item.approach),element('span','score',item.score+'/100'));
-          button.append(meta,element('strong','option-title',item.title),element('span','hook','🎬 أول 3 ثواني: '+item.hook));
-          button.addEventListener('click',()=>{chosen=i;render()});
-          options.append(button);
-        });
-        const current=entries[chosen],hashtags=hashTags(keywords);
-        const cta=platform==='youtube'?'اشترك عشان تعرف حكايات أغرب من الخيال! 🔔':platform==='facebook'?'💬 لو كنت مكانهم، كنت هتعمل إيه؟ اكتب رأيك وشارك الحكاية!':'💬 كنت هتتصرف إزاي؟ اكتب رأيك وتابعنا!';
-        const lines=[current.title,'',context?'📍 '+context:'','🎬 '+shorten(topic,180)+'.',!hideTwist&&twist?'🤯 والمفاجأة: '+shorten(twist,180)+'!':'🤯 لكن اللي حصل في النهاية كان أغرب من المتوقع!','',cta,'',hashtags.join(' ')];
-        caption=lines.filter(Boolean).join('\n');
-        tags=youtubeTags(topic,keywords);
-        byId('selectedTitle').textContent=current.title;
-        byId('selectedHook').textContent=current.hook;
-        byId('caption').textContent=caption;
-        byId('youtubeTags').classList.toggle('hide',platform!=='youtube');
-        byId('tagText').textContent=tags;
-        byId('tagCount').textContent=tags.length+'/500 حرف';
-      }
-      function toast(message){
-        const node=byId('toast');node.textContent=message;node.classList.remove('hide');
-        clearTimeout(toast.timer);toast.timer=setTimeout(()=>node.classList.add('hide'),2600);
-      }
-      async function copy(value){
-        try{
-          if(!value){toast('اكتب فكرة الفيديو الأول');return;}
-          await navigator.clipboard.writeText(value);toast('اتنسخ بنجاح ✓');
-        }catch{toast('النسخ التلقائي مش متاح؛ اضغط مطوّل على النص وانسخه.')}
-      }
-      ['topic','twist','context','keywords','hideTwist'].forEach(id=>byId(id).addEventListener('input',()=>{chosen=0;render()}));
-      document.querySelectorAll('[data-platform]').forEach(node=>node.addEventListener('click',()=>{platform=node.dataset.platform;chosen=0;render()}));
-      document.querySelectorAll('[data-style]').forEach(node=>node.addEventListener('click',()=>{style=node.dataset.style;chosen=0;render()}));
-      byId('copyTitle').addEventListener('click',()=>copy(entries[chosen]?.title));
-      byId('copyHook').addEventListener('click',()=>copy(entries[chosen]?.hook));
-      byId('copyCaption').addEventListener('click',()=>copy(caption));
-      byId('copyTags').addEventListener('click',()=>copy(tags));
-      render();
-    })();
-  </script>
+    <p class="note">النتائج اقتراحات بالذكاء الاصطناعي، مش ضمان إنها هتبقى Viral أو إن الهاشتاجات ترند بالفعل. راجع التفاصيل التاريخية أو الحقائق قبل النشر.</p>
+  </section>
+</div>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+<script>
+(() => {
+  'use strict';
+  const API='https://viral-studio-ai.mleads026.workers.dev/generate';
+  const byId=(id)=>document.getElementById(id);
+  const LABELS={youtube:'YouTube Shorts',instagram:'Instagram Reels',tiktok:'TikTok',facebook:'Facebook Reels'};
+  const ORDER=['youtube','instagram','tiktok','facebook'];
+  let selected='youtube',generated=null;
+  try{byId('pin').value=localStorage.getItem('viralStudioAccessCode')||''}catch{}
+  function status(message,error){
+    const el=byId('status');
+    el.classList.remove('hidden','error','ok');
+    if(!message){el.classList.add('hidden');return}
+    el.textContent=message;
+    el.classList.add(error?'error':'ok');
+  }
+  function toast(message){
+    const el=byId('toast');el.textContent=message;el.classList.remove('hidden');
+    clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.add('hidden'),2200);
+  }
+  async function copy(value){
+    if(!value){toast('مفيش محتوى لنسخه');return}
+    try{await navigator.clipboard.writeText(value);toast('تم النسخ ✅')}catch{toast('النسخ مش متاح، اضغط مطوّل على النص')}
+  }
+  function node(tag,cls,text){
+    const el=document.createElement(tag);if(cls)el.className=cls;
+    if(text!==undefined)el.textContent=text;
+    return el;
+  }
+  function current(){return generated?.[selected]}
+  function cleanTitleList(p){return Array.isArray(p?.titles)?p.titles.filter(Boolean):[]}
+  function joinedTags(p){return (p?.hashtags||[]).join(' ')}
+  function ytTags(p){return (p?.tags||[]).join(', ').slice(0,500)}
+  function pack(platform){
+    const p=generated?.[platform];if(!p)return '';
+    const lines=[LABELS[platform],'','العناوين:',...cleanTitleList(p).map((title,index)=>(index+1)+'. '+title),'','Hook أول 3 ثواني:',p.hook,'','الكابشن:',p.caption,'','الهاشتاجات:',joinedTags(p)];
+    if(platform==='youtube'){lines.push('','YouTube Tags:',ytTags(p))}
+    lines.push('','النص على الصورة المصغرة:',p.thumbnail,'','التعليق المثبت:',p.pinnedComment);
+    return lines.join('\n');
+  }
+  function render(){
+    if(!generated)return;
+    document.querySelectorAll('[data-platform]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.platform===selected)));
+    const p=current();
+    const titles=byId('titles');titles.replaceChildren();
+    cleanTitleList(p).forEach((value,i)=>{
+      const item=node('div','title-item');
+      const label=node('div','',(i===0?'⭐ ':'')+value);
+      const btn=node('button','copy','نسخ');btn.type='button';btn.addEventListener('click',()=>copy(value));
+      item.append(label,btn);titles.append(item);
+    });
+    byId('hook').textContent=p.hook;
+    byId('thumbnail').textContent=p.thumbnail||'—';
+    byId('caption').textContent=p.caption;
+    byId('comment').textContent=p.pinnedComment||'—';
+    const tags=byId('hashtags');tags.replaceChildren();
+    (p.hashtags||[]).forEach(tag=>tags.append(node('span','tag',tag)));
+    byId('ytTagsWrap').classList.toggle('hidden',selected!=='youtube');
+    byId('ytTags').textContent=ytTags(p);
+    byId('ytCount').textContent=ytTags(p).length+'/500 حرف';
+  }
+  const story=byId('story'),counter=byId('counter');
+  story.addEventListener('input',()=>{counter.textContent=story.value.length+' / 8000 حرف'});
+  byId('trySample').addEventListener('click',()=>{
+    story.value='قصة قصيرة مدتها دقيقة عن ملك حاصر قلعة في ألمانيا في العصور الوسطى. سمح للنساء بالخروج حاملين أغلى شيء عندهن، وكانت المفاجأة أن كل واحدة حملت زوجها على ظهرها. ابدأ بهوك قوي، وقدّم القصة بتشويق، ولا تحرق النهاية في العنوان. محتوى تاريخي بأسلوب سرد مصري، فيديو 9:16.';
+    story.dispatchEvent(new Event('input'));story.focus();status('',false);
+  });
+  byId('showPin').addEventListener('click',()=>{
+    const el=byId('pin');el.type=el.type==='password'?'text':'password';
+  });
+  document.querySelectorAll('[data-platform]').forEach(button=>button.addEventListener('click',()=>{selected=button.dataset.platform;render()}));
+  byId('generate').addEventListener('click',async()=>{
+    const prompt=story.value.trim(),pin=byId('pin').value.trim().toUpperCase();
+    if(prompt.length<20){status('اكتب برومبت القصة الأول (20 حرف على الأقل).',true);story.focus();return}
+    if(!pin){status('اكتب كود الاستوديو الخاص في الخانة اللي على اليسار/تحت.',true);byId('pin').focus();return}
+    const btn=byId('generate');
+    btn.disabled=true;btn.textContent='⏳ جاري تحويل القصة للأربع منصات...';
+    status('بنحلّل القصة وبنكتب العناوين والكابشنات. لو البرومبت طويل، التوليد ممكن ياخد شوية وقت.',false);
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),95000);
+    try{
+      const response=await fetch(API,{
+        method:'POST',mode:'cors',
+        headers:{'content-type':'application/json','x-studio-pin':pin},
+        body:JSON.stringify({prompt,language:byId('language').value,hideSpoiler:byId('hideSpoiler').checked}),
+        signal:controller.signal
+      });
+      const data=await response.json().catch(()=>({}));
+      if(!response.ok||!data.ok||!data.platforms)throw new Error(data.error||'تعذّر الاتصال بخدمة الذكاء الاصطناعي. حاول تاني.');
+      const complete=ORDER.every(key=>data.platforms[key]?.titles?.length&&data.platforms[key]?.caption);
+      if(!complete)throw new Error('النتيجة غير مكتملة. حاول توليدها مرة ثانية.');
+      generated=data.platforms;selected='youtube';
+      try{localStorage.setItem('viralStudioAccessCode',pin)}catch{}
+      byId('resultArea').classList.remove('hidden');render();
+      status('✅ تم توليد محتوى الأربع منصات بنجاح. تقدر تنسخ أي جزء من النتيجة.',false);
+      byId('resultArea').scrollIntoView({behavior:'smooth',block:'start'});
+    }catch(error){
+      status(error?.name==='AbortError'?'اتأخر الرد من الذكاء الاصطناعي. جرّب مرة تانية.':(error?.message||'حصل خطأ غير متوقع.'),true);
+    }finally{
+      clearTimeout(timer);btn.disabled=false;btn.textContent='✨ ولّد المحتوى للأربع منصات';
+    }
+  });
+  byId('copyTitles').addEventListener('click',()=>copy(cleanTitleList(current()).join('\n')));
+  byId('copyHook').addEventListener('click',()=>copy(current()?.hook));
+  byId('copyThumbnail').addEventListener('click',()=>copy(current()?.thumbnail));
+  byId('copyCaption').addEventListener('click',()=>copy(current()?.caption));
+  byId('copyHashtags').addEventListener('click',()=>copy(joinedTags(current())));
+  byId('copyYtTags').addEventListener('click',()=>copy(ytTags(current())));
+  byId('copyComment').addEventListener('click',()=>copy(current()?.pinnedComment));
+  byId('copyPack').addEventListener('click',()=>copy(pack(selected)));
+  byId('copyAll').addEventListener('click',()=>copy(ORDER.map(pack).join('\n\n'+'═'.repeat(24)+'\n\n')));
+})();
+</script>
 </body>
 </html>
