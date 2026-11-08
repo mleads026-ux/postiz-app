@@ -1,6 +1,6 @@
 {
 	"name": "Postiz Dev Container",
-	"image": "ghcr.io/gitroomhq/postiz-devcontainer:latest",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
 	"features": {},
 	"customizations": {
 		"vscode": {
@@ -8,7 +8,7 @@
 			"extensions": []
 		}
 	},
-	"forwardPorts": ["4200:4200", "3000:3000"],
+	"forwardPorts": [4200, 3000],
 	"mounts": ["source=/apps,destination=/apps/dist/,type=bind,consistency=cached"]
 }
 
